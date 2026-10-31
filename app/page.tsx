@@ -78,7 +78,7 @@ function PhoneScreen() {
         </div>
         <p className="profile-message">I don&apos;t use<br />social media.</p>
         <p className="profile-caption">But I&apos;d love to share what I make.</p>
-        <a className="profile-button" href={portfolioUrl}>
+        <a className="profile-button" href={portfolioUrl} target="_blank" rel="noopener noreferrer">
           Visit my portfolio <span aria-hidden="true">↗</span>
         </a>
         <span className="profile-decoration profile-decoration-one" aria-hidden="true" />
