@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
+import { Iphone } from "@/components/ui/iphone";
+import TargetCursor from "../components/TargetCursor";
 
 const brandName = "Satvic Movement";
 const highlightDuration = (brandName.length - 1) * 45 + 520;
@@ -27,7 +29,7 @@ function SatvicBrand() {
   }, [playNameAnimation]);
 
   return (
-    <a className="home-brand" href="/" aria-label="Satvic Movement home">
+    <a className="home-brand cursor-target" href="/" aria-label="Satvic Movement home" data-cursor-label="Satvic Movement">
       <img className="home-logo" src="/logo.jpg" alt="" />
       <span
         className={`variable-name${autoAnimating ? " is-auto-animating" : ""}`}
@@ -87,6 +89,7 @@ export default function Home() {
 
   return (
     <main className="home-page">
+      <TargetCursor />
       <header className="home-nav">
         <SatvicBrand />
       </header>
@@ -97,6 +100,13 @@ export default function Home() {
         onPointerLeave={hideDots}
       >
         <div className="dot-matrix" aria-hidden="true" />
+        <div className="hero-phone-wrap">
+          <Iphone
+            className="hero-phone cursor-target"
+            data-cursor-label="iPhone"
+            aria-label="iPhone mockup"
+          />
+        </div>
       </section>
     </main>
   );
