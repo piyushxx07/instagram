@@ -11,7 +11,7 @@ body {
 body {
   background: #fff;
   color: #202124;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Gilroy", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -37,7 +37,6 @@ body {
   align-items: center;
   gap: 11px;
   color: #202124;
-  font-size: 20px;
   text-decoration: none;
 }
 
@@ -53,6 +52,47 @@ body {
   flex: 0 0 32px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.variable-name {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.variable-name-character {
+  display: inline-block;
+  transform-origin: bottom;
+  transition: color 100ms ease-out, font-weight 100ms ease-out, transform 100ms ease-out;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.variable-name-character.is-space {
+  width: 0.27em;
+}
+
+.variable-name-character.is-bold {
+  font-weight: 600;
+}
+
+.variable-name.is-auto-animating .variable-name-character {
+  animation: name-letter-highlight 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes name-letter-highlight {
+  0%,
+  100% {
+    color: #111827;
+    transform: scale(1);
+  }
+
+  45% {
+    color: #3157e8;
+    font-variation-settings: "wght" 900, "opsz" 40;
+    transform: translateY(-2px) scale(1.16);
+  }
 }
 
 .home-hero {
@@ -87,6 +127,9 @@ body {
 
   .home-brand {
     gap: 8px;
+  }
+
+  .variable-name-character {
     font-size: 18px;
   }
 }
