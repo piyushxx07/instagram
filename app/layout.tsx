@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Satvic Movement",
-  description: "Satvic Movement",
+  title: "Satvic Movement | Portfolio",
+  description: "I do not use social media. Visit my profile to see my portfolio.",
   icons: {
     icon: "/logo.jpg",
     shortcut: "/logo.jpg",
